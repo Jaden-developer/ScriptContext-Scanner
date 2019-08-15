@@ -3,6 +3,7 @@
  [!] Use this how much you want, credits would be appreciated :)
 */
 
+// Lazy to explain this, didnt even write the full thing only like a line so why would i care.
 namespace Hook{
 void* placeHook(DWORD address, void* hook, bool revert = false) {
 	DWORD oldprot;
@@ -26,7 +27,7 @@ void* placeHook(DWORD address, void* hook, bool revert = false) {
 
 }
 DWORD a1 = 0;
-DWORD r_l_gettop = 0x825d90; //gettop addr
+DWORD r_l_gettop = 0x111111; // lua_gettop offset, no ScriptContext needed :)
 
 int a2(DWORD rState)
 {
@@ -36,7 +37,7 @@ int a2(DWORD rState)
 
 int main()
 {
-  CONSOLEBYPASS(); // Console Bypass from Axon Source Code. 
+ 	CONSOLEBYPASS(); // Console Bypass from Axon Source Code. 
 	freopen("CONOUT$", "w", stdout);
 	freopen("CONIN$", "r", stdin);
 	HWND ConsoleHandle = GetConsoleWindow();
